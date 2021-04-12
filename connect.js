@@ -163,7 +163,7 @@ async function fetchAccountData() {
     //PUPPR Token 
     document.querySelector(".pupprbalance").textContent = humanFriendlyBalance2;
     document.querySelector(".puppr").innerHTML =contractaddress ;
-    document.querySelector(".pupprscan").innerHTML = "<a href='https://bscscan.com/address/0x845b705996f4235e7e0b792d57d4bc452ba6f748'; target='_blank' >VerifiedSmartContract</a>" ;
+    document.querySelector(".pupprscan").innerHTML = "<a href='https://bscscan.com/address/0x845b705996f4235e7e0b792d57d4bc452ba6f748'; target='_blank' >NotYetVerifiedSmartContract</a>" ;
     //Cake Token
     //document.querySelector(".cakebalance").textContent = humanFriendlyBalance3;
     //document.querySelector(".cake").textContent = contractaddress2;
