@@ -115,17 +115,17 @@ async function fetchAccountData() {
   const rowResolvers = accounts.map(async (address) => {
     //GET Ethereum/BNB  Balance
     const balance = await web3.eth.getBalance(address);
-    //CWJ TOKEN 
+    //PUPPR TOKEN 
     const contract = new web3.eth.Contract(abi,contractaddress);
     //Cake Token
     //const contract2 = new web3.eth.Contract(abi,contractaddress2);
     
-    //Fetch token Balance CWJ
+    //Fetch token Balance PUPPR
     const tokenBalance = await contract.methods.balanceOf(address).call();
     //Fetch token Balance Cake
     //const cakeBalance = await contract2.methods.balanceOf(address).call();
 
-    //CWJ Contract 
+    //PUPPR Contract 
     const totalSupply = await contract.methods.totalSupply().call();
     
     const totalStake = await contract.methods.totalStaked().call();
@@ -141,12 +141,12 @@ async function fetchAccountData() {
     // https://github.com/indutny/bn.js/
     const ethBalance = web3.utils.fromWei(balance, "ether");
     const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);
-    //convert token balance cwj
-    const tokenBalancecwj = web3.utils.fromWei(tokenBalance, "ether");
-    const humanFriendlyBalance2 = parseFloat(tokenBalancecwj).toFixed(4);
-    //convert token balance cwj
-    //const cakeBalancecwj = web3.utils.fromWei(cakeBalance, "ether");
-   // const humanFriendlyBalance3 = parseFloat(cakeBalancecwj).toFixed(4);
+    //convert token balance puppr
+    const tokenBalancepuppr = web3.utils.fromWei(tokenBalance, "ether");
+    const humanFriendlyBalance2 = parseFloat(tokenBalancepuppr).toFixed(4);
+    //convert token balance puppr
+    //const cakeBalancepuppr = web3.utils.fromWei(cakeBalance, "ether");
+   // const humanFriendlyBalance3 = parseFloat(cakeBalancepuppr).toFixed(4);
     
     
 
@@ -160,16 +160,16 @@ async function fetchAccountData() {
         document.getElementById('buyBNB').disabled = true;
     }
     //document.querySelector(".address").textContent = address;
-    //CWJ Token 
-    document.querySelector(".cwjbalance").textContent = humanFriendlyBalance2;
-    document.querySelector(".cwj").innerHTML =contractaddress ;
-    document.querySelector(".cwjscan").innerHTML = "<a href='https://bscscan.com/address/0x49AD5Ae0b902360029b222CB6516521afA8e1141'; target='_blank' >VerifiedSmartContract</a>" ;
+    //PUPPR Token 
+    document.querySelector(".pupprbalance").textContent = humanFriendlyBalance2;
+    document.querySelector(".puppr").innerHTML =contractaddress ;
+    document.querySelector(".pupprscan").innerHTML = "<a href='https://bscscan.com/address/0x49AD5Ae0b902360029b222CB6516521afA8e1141'; target='_blank' >VerifiedSmartContract</a>" ;
     //Cake Token
     //document.querySelector(".cakebalance").textContent = humanFriendlyBalance3;
     //document.querySelector(".cake").textContent = contractaddress2;
 
    if(humanFriendlyBalance2 == 0){
-    document.querySelector(".cwjbalance").innerHTML = "0 CWJ, <a href='https://1inch.exchange/#/r/0x9F0818B7D8AaA0AD4Db760E896363b2A01a00921'> Buy on 1inch</a> or get on <a href='https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x49AD5Ae0b902360029b222CB6516521afA8e1141'>PancakeSwap</a>"
+    document.querySelector(".pupprbalance").innerHTML = "0 PUPPR, <a href='https://1inch.exchange/#/r/0x9F0818B7D8AaA0AD4Db760E896363b2A01a00921'> Buy on 1inch</a> or get on <a href='https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x49AD5Ae0b902360029b222CB6516521afA8e1141'>PancakeSwap</a>"
     document.getElementById('addToken').style.display = 'none'
    }else{
      
@@ -373,7 +373,7 @@ addToken.addEventListener('click', () =>{
       type: 'ERC20',
       options: {
         address: '0x49AD5Ae0b902360029b222CB6516521afA8e1141',
-        symbol: 'CWJ',
+        symbol: 'PUPPR',
         decimals: 18,
         image: 'https://token.codewithjoe.net/logo.png',
       },
