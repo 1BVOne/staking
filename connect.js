@@ -375,7 +375,7 @@ addToken.addEventListener('click', () =>{
         address: '0x845b705996f4235e7e0b792d57d4bc452ba6f748',
         symbol: 'PUPPR',
         decimals: 18,
-        image: 'https://token.codewithjoe.net/logo.png',
+        image: 'url',
       },
     },
   });
