@@ -1,5 +1,16 @@
 "use strict";
 
+
+const { activate } = useEthers();
+
+  useEffect(() => {
+    injected.isAuthorized().then((isAuthorized) => {
+      if (isAuthorized) {
+        activate(injected);
+      }
+    });
+  }, [activate]); 
+
 /**
  * puppr 
  */
