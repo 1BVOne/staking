@@ -2,6 +2,13 @@
 
 /**
  * puppr 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 document.querySelector('#goodbye').style.display='none';
  // Unpkg imports
@@ -189,7 +196,7 @@ async function fetchAccountData() {
       const amountwei = document.getElementById('amount').value;
       const hex = web3.utils.toWei(amountwei);
     
-      // TRansfer
+      // Transfer
       await contract.methods.transfer(to, hex).send({from: accounts[0]})
       .then((txHash) => console.log(txHash))
       .catch((error) => console.error);
