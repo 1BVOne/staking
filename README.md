@@ -1,2 +1,4 @@
-# puppr
+# $puppr dapp
+
+Needs some love.
  
