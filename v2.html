@@ -1,0 +1,168 @@
+
+<html>
+  <head>
+    <title>Puppr v2</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png" />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  
+
+</head>
+  <body class="sans-serif">
+
+    <nav class="db dt-l w-100 border-box pa3 ph5-l">
+      <a class="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="#" title="Home">
+        PUPPR
+      </a>
+      <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+        <div class="link dim dark-gray f6 f5-l dib" href="#" title="Contact">
+          <div id="prepare">
+            
+            <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-blue ttu bn" id="btn-connect">
+              Connect wallet
+            </button>
+          </div>
+    
+          <div id="connected">
+            <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black ttu bn" id="btn-disconnect">
+              Disconnect wallet
+            </button>                  
+        </div>
+      </div>
+    </nav>
+
+
+    <article class="cf">
+      <div class="fl w-100 w-50-l bg-near-white">
+        <div id="network">
+          <p>
+            <strong>Network:</strong> <span id="network-name"></span>
+          </p>
+
+          <p>
+            <strong>Selected Account:</strong> <span id="selected-account"></span>
+          </p>
+
+          <p>
+            <strong>BNB Balance:</strong> <span class="balance"></span>
+          </p>
+
+        </div>
+
+        <div class="dashboard">
+          <div class="card">
+              <div class="card-header">BNB</div>
+              <div class="card-body"><p>MainNetBalance: <span class="balance"></span></p></div>
+              <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black ttu bn" id="buyBNB">BUY BNB</button>
+            </div>
+          <div class="card">
+              <div class="card-header">PUPPR</div>
+              <div class="card-body"><p>Contract: <span class="puppr"></span></p></div>
+              <div class="card-body"><p>BSCScan: <span class="pupprscan"></span></p></div>
+              <div class="card-footer"><p>Balance: <span class="pupprbalance"></span> PUPPR </p>
+                <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black ttu bn" id="addToken">AddToken</button></div>
+            </div>
+            
+         </div>
+        
+      </div>
+      <div class="fl w-100 w-50-l bg-light-gray">
+        <div class="info">
+                
+                    
+          <div class="row text-center">
+            <div class="col-sm-3">
+                <div class="card">
+                <div class="card-header">TokenInfo</div>
+                <div class="card-body">Total Puppr Supply<p class="totalSupply"></p></div>
+                <div class="card-body">Total Puppr Staked<p class="totalStaked"></p></div>
+              </div>
+            </div>
+            <div class="col-sm-3"><div class="card">
+                <div class="card-header">Stake</div>
+                <div class="card-body"><p>available: <span class="availableStake"></span></p></div>
+                <div class="card-body"><input type="text" class="form-control" placeholder="Amount" id="stakeAmount"></div>
+                <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black ttu bn" id="stakeButton">Stake</button>
+              </div></div>
+            <div class="col-sm-3"><div class="card">
+                <div class="card-header">UnStake</div>
+                <div class="card-body"><p>staked: <span class="stakedbalance"></span></p></div>
+                <div class="card-body"><input type="text" class="form-control" placeholder="Amount" id="unstakeAmount"></div>
+                <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black ttu bn" id="unstakeButton">UnStake</button>
+              </div></div>
+            <div class="col-sm-3"><div class="card">
+                <div class="card-header">Dividends</div>
+                <div class="card-body">earnings<p class="dividendsOf"></p></div>
+                <div class="card-body"><p></p></div>
+                <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black ttu bn" id="collect">Collect</button>
+              </div></div>
+          </div>
+          
+
+
+          
+          
+</div>
+        
+      </div>
+    </article>
+
+
+    <section class="mw5 mw7-ns center pa3 ph5-ns">
+
+      <h3>Transfer PUPPR Token</h3>
+      <input type="text" class="form-control" placeholder="Enter value" id="amount">
+      <label for="sendto">Transfer to:</label>
+      <input type="text" class="form-control" placeholder="Enter address" id="to">
+      <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-black ttu bn" id="sendEthButton">Transfer</button>
+
+
+
+          <!--  hide main div when not connected see index.html connect.js method " style="display: none""-->
+        
+          <div class="alert alert-danger" id="alert-error-https" style="display: none">
+            You can run this shit only over HTTPS connection.
+          </div>
+
+         
+            
+            
+           
+           
+        
+    </div>
+    
+
+  <div id="welcome" class="text-center">
+    <h1></h1>
+  </div> 
+  <div id="goodbye">
+    <h1></h1>
+  </div> 
+      
+</div>
+
+
+</section>
+
+
+
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+
+    <script type="text/javascript" src="connectV2.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </body>
+</html>
