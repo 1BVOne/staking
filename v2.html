@@ -42,7 +42,7 @@
   
     
     <main class="cf">
-      <div class="fl w-100 w-50-l pa5">
+      <div class="fl w-100 w-50-l pa5 bg-light-gray">
         <div id="network">
           <p>
             <strong>Network:</strong> <span id="network-name"></span>
@@ -94,25 +94,24 @@
                 
                     
           <div class="row text-center">
-            <div class="col-sm-3">
-                <div class="card bg-lightest-blue br3 pa2">
-                <div class="card-body">Total Puppr Supply:<p class="totalSupply"></p></div>
-                <div class="card-body">Total Puppr Staked:<p class="totalStaked"></p></div>
-              </div>
-            </div>
+
             
             <div class="col-sm-3"><div class="card">
               <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">Stake Puppr</h1>
+              <div class="card bg-lightest-blue br3 pa2">
+                <div class="card-body">Total Puppr Supply:<p class="totalSupply"></p></div>
+                <div class="card-body">Total Puppr Staked:<p class="totalStaked"></p></div>
+              </div>
               <p>2% of every transaction or transfer is distributed evenly to those who are staking.</p>
-                <div class="card-header">Stake</div>
+                <h3>Stake</h3>
                 <div class="card-body"><p>Available: <span class="availableStake"></span></p></div>
-                <div class="card-body"><input type="text" class="form-control" placeholder="Amount" id="stakeAmount"></div>
+                <input type="text" class="form-control b pa2 input-reset ba bg-transparent" placeholder="Amount" id="stakeAmount">
                 <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue " id="stakeButton" style="background-image: url(img/dark-blue-noise-bg.png);">Stake</button>
               </div></div>
             <div class="col-sm-3"><div class="card">
-                <div class="card-header">UnStake</div>
+                <h3>UnStake</h3>
                 <div class="card-body"><p>Staked: <span class="stakedbalance"></span></p></div>
-                <div class="card-body"><input type="text" class="form-control" placeholder="Amount" id="unstakeAmount"></div>
+                <input type="text" class="form-control b pa2 input-reset ba br2 bg-transparent" placeholder="Amount" id="unstakeAmount">
                 <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue " id="unstakeButton" style="background-image: url(img/dark-blue-noise-bg.png);">UnStake</button>
               </div></div>
             <div class="col-sm-3"><div class="card br1">
