@@ -11,38 +11,107 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+<style>
+  .avatar {
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+.avatar img {
+  border-radius: 9999px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+@keyframes cycle-colors {
+  0% { border-color: hsl(0, 100%, 50%); }
+  25% { border-color: hsl(90, 100%, 50%); }
+  50% { border-color: hsl(180, 100%, 50%); }
+  75% { border-color: hsl(270, 100%, 50%); }
+  100% { border-color: hsl(360, 100%, 50%); }
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.avatar::before,
+.avatar::after {
+  animation: pulse 2s linear infinite;
+  border: rgba(52, 127, 174, 0.564) solid 8px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  content: ' ';
+  height: 140%;
+  left: -20%;
+  opacity: .6;
+  position: absolute;
+  top: -20%;
+  transform: scale(0.714);
+  width: 140%;
+  z-index: 1;
+}
+
+.avatar::after {
+  animation-delay: 1s;
+}
+
+.avatar:hover img {
+  content: url('puppr.png');
+}
+
+.avatar:hover::before,
+.avatar:hover::after {
+  animation: pulse 1s linear infinite, cycle-colors 6s linear infinite;
+}
+
+.avatar:hover::after {
+  animation-delay: .5s;
+}
+</style>
 
 </head>
   <body class="sans-serif black">
 
     <!-- Navigation / Header Bar -->
 
-    <nav class="db dt-l w-100 border-box pa3 ph5-l">
+    <nav class="db dt-l w-100 border-box pa3 ph5-l bb b--light-blue" >
       <a class="db dtc-l v-mid mid-pink link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="#" title="Home">
-        <img src="puppr.png" class="br-100 pa1 ba b--lightest-blue h3 w3" alt="awww such cute puppr">
+                
+        <div class="avatar">
+          <img src="puppr.png" alt="awww such cute puppr">
+        </div>
+    
+
+
+
       </a>
       <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
         <div class="link dim dark-pink f6 f5-l dib" href="#" title="Wallet Connect">
           <div id="prepare">
             
-            <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-blue ttu bn" id="btn-connect" style="background-image: url(img/dark-blue-noise-bg.png);">
+            <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-blue ttu bn" id="btn-connect" style="background-image: url(img/static-blue.gif);">
               Connect wallet
             </button>
           </div>
     
           <div id="connected" style="display: none">
-            <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-blue ttu bn" id="btn-disconnect" style="background-image: url(img/dark-blue-noise-bg.png);">
+            <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-blue ttu bn" id="btn-disconnect" style="background-image: url(img/static-blue.gif);">
               Disconnect wallet
             </button>                  
         </div>
       </div>
     </nav>
     
-  
     
     <main class="cf">
-      <div class="fl w-100 w-50-l pa5 bg-light-gray">
+      <div class="fl w-100 w-25-l pa4 br b--light-blue">
         <div id="network">
           <p>
             <strong>Network:</strong> <span id="network-name"></span>
@@ -59,12 +128,12 @@
         </div>
 
         <div class="dashboard">
-          <div class="card ba b--blue br2 pa2">
+          <div class="card bt bb b--light-blue pa2">
               <h3>BNB</h3>
               <div class="card-body"><p>MainNetBalance: <span class="balance"></span></p></div>
-              <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue " id="buyBNB" style="background-image: url(img/dark-blue-noise-bg.png);">BUY BNB</button>
+              <button class="f5 link dim br2 ph3 pv2 mb2 dib white fw7 bg-blue ttu ba b--blue " id="buyBNB" style="background-image: url(img/static-blue.gif);">BUY BNB</button>
             </div>
-          <div class="card ba b--blue br2 pa2">
+          <div class="card ba b--light-blue br2 pa2">
               <h3>PUPPR</h3>
               <div class="card-body"><p>Contract: <span class="puppr"></span></p></div>
               <div class="card-body"><p>BSCScan: <span class="pupprscan"></span></p></div>
@@ -75,9 +144,9 @@
          </div>
          
          
-         <div class="card ba b--blue br2 pa2">
+         <div class="card ba b--light-blue br2 pa2">
          <h3>Add PUPPR to MetaMask</h3>
-         <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue " id="addToken" style="background-image: url(img/dark-blue-noise-bg.png);">Add Puppr</button>
+         <button class="f5 link dim br2 ph3 pv2 mb2 dib white fw7 bg-blue ttu ba b--blue " id="addToken" style="background-image: url(img/static-blue.gif);">Add Puppr</button>
         </div>
 
         <div class="card ba b--blue br2 pa2">
@@ -89,36 +158,49 @@
         </div>
 
       </div>
-      <div class="fl w-100 w-50-l pa5">
+      <div class="fl w-100 w-50-l pa5 bg-lightest-blue">
         <div class="info">
                 
                     
           <div class="row text-center">
 
-            
-            <div class="col-sm-3"><div class="card">
-              <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">Stake Puppr</h1>
-              <div class="card bg-lightest-blue br3 pa2">
-                <div class="card-body">Total Puppr Supply:<p class="totalSupply"></p></div>
-                <div class="card-body">Total Puppr Staked:<p class="totalStaked"></p></div>
-              </div>
-              <p>2% of every transaction or transfer is distributed evenly to those who are staking.</p>
+
+
+            <article class="cf">
+              <div class="fl w-100 w-50-ns">
                 <h3>Stake</h3>
                 <div class="card-body"><p>Available: <span class="availableStake"></span></p></div>
                 <input type="text" class="form-control b pa2 input-reset ba bg-transparent" placeholder="Amount" id="stakeAmount">
-                <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue " id="stakeButton" style="background-image: url(img/dark-blue-noise-bg.png);">Stake</button>
-              </div></div>
-            <div class="col-sm-3"><div class="card">
+                <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue " id="stakeButton" style="background-image: url(img/static-blue.gif);">Stake</button>
+              </div>
+              <div class="fl w-100 w-50-ns">
                 <h3>UnStake</h3>
-                <div class="card-body"><p>Staked: <span class="stakedbalance"></span></p></div>
-                <input type="text" class="form-control b pa2 input-reset ba br2 bg-transparent" placeholder="Amount" id="unstakeAmount">
-                <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue " id="unstakeButton" style="background-image: url(img/dark-blue-noise-bg.png);">UnStake</button>
-              </div></div>
+                
+                <fieldset class="cf bn ma0 pa0">
+                  <legend class="pa0 f5 f4-ns mb3 black-80">Staked: <span class="stakedbalance"></span></legend>
+                
+                <input type="text" class="form-control f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Amount" id="unstakeAmount">
+                <button class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" id="unstakeButton" style="background-image: url(img/static-blue.gif);">UnStake</button>
+                </fieldset>
+              </div>
+            </article>
+            
+            
+            <div class="col-sm-3"><div class="card">
+              
+                <div class="card-body">Total Puppr Supply:<p class="totalSupply"></p></div>
+                <div class="card-body">Total Puppr Staked:<p class="totalStaked"></p></div>
+              
+              <p>2% of every transaction or transfer is distributed evenly to those who are staking.</p>
+              </div>
+            </div>
+              
+
             <div class="col-sm-3"><div class="card br1">
                 <div class="card-header">Dividends</div>
                 <div class="card-body">Earnings:<p class="dividendsOf"></p></div>
                 <div class="card-body"><p></p></div>
-                <button class="f5 link dim br2 ph3 pv2 mb2 dib dark-blue fw7 bg-blue ttu ba b--blue" id="collect" style="background-image: url(img/dark-blue-noise-bg.png);">Collect</button>
+                <button class="f5 link dim br2 ph3 pv2 mb2 dib white fw7 bg-blue ttu ba b--blue" id="collect" style="background-image: url(img/static-blue.gif);">Collect</button>
               </div></div>
           </div>
           
