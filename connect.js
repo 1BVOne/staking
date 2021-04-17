@@ -176,7 +176,7 @@ async function fetchAccountData() {
     //document.querySelector(".cake").textContent = contractaddress2;
 
    if(humanFriendlyBalance2 == 0){
-    document.querySelector(".pupprbalance").innerHTML = "0 PUPPR, <a href='https://1inch.exchange/#/r/0x9F0818B7D8AaA0AD4Db760E896363b2A01a00921'> Buy on 1inch</a> or get on <a href='https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x845b705996f4235e7e0b792d57d4bc452ba6f748'>PancakeSwap</a>"
+    document.querySelector(".pupprbalance").innerHTML = "0 PUPPR, Get on <a href='https://exchange.pancakeswap.finance/#/swap?inputCurrency=0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d&outputCurrency=0x845b705996f4235e7e0b792d57d4bc452ba6f748'>PancakeSwap</a>"
     document.getElementById('addToken').style.display = 'none'
    }else{
      
