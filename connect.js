@@ -108,7 +108,8 @@ async function fetchAccountData() {
   document.querySelector("#network-name").textContent = chainData.name;
 
   // Get list of accounts of the connected wallet
-//  const accounts = await web3.eth.getAccounts();
+  // HOLY SHIT  https://docs.metamask.io/guide/provider-migration.html#replacing-window-web3
+  //  const accounts = await web3.eth.getAccounts();
   const accounts = await ethereum.request({ method: 'eth_accounts' });
 
 
