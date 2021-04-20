@@ -174,7 +174,7 @@ async function fetchAccountData() {
     //PUPPR Token 
     document.querySelector(".pupprbalance").textContent = humanFriendlyBalance2;
     document.querySelector(".puppr").innerHTML =contractaddress ;
-    document.querySelector(".pupprscan").innerHTML = "<a href='https://bscscan.com/address/0x49AD5Ae0b902360029b222CB6516521afA8e1141'; target='_blank' >VerifiedSmartContract</a>" ;
+    document.querySelector(".pupprscan").innerHTML = "<a href='https://bscscan.com/address/0x845b705996f4235e7e0b792d57d4bc452ba6f748'; target='_blank' >VerifiedSmartContract</a>" ;
     //Cake Token
     //document.querySelector(".cakebalance").textContent = humanFriendlyBalance3;
     //document.querySelector(".cake").textContent = contractaddress2;
@@ -383,7 +383,7 @@ addToken.addEventListener('click', () =>{
     params: {
       type: 'ERC20',
       options: {
-        address: '0x49AD5Ae0b902360029b222CB6516521afA8e1141',
+        address: '0x845b705996f4235e7e0b792d57d4bc452ba6f748',
         symbol: 'PUPPR',
         decimals: 18,
         image: 'url',
