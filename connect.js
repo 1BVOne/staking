@@ -65,7 +65,7 @@ function init() {
       package: WalletConnectProvider,
       options: {
         // Fran's test key - don't copy as your mileage may vary
-        infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
+        infuraId: "",
       }
     },
 
@@ -73,7 +73,7 @@ function init() {
       package: Fortmatic,
       options: {
         // Fran's TESTNET api key - don't copy as your mileage may vary
-        key: "pk_test_391E26A3B43A3350"
+        key: ""
       }
     },
     
