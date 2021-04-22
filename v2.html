@@ -106,7 +106,56 @@
 
     
     
-    <main class="cf">
+    <div id="panels" class="cf">
+
+            <!-- Main -->
+            <div class="fl w-100 w-70-l pa5 bg-lightest-blue">
+        
+              <div class="info"> 
+                          
+                <div class="row text-center">
+                  <div class="col-sm-3">
+                      <div class="card">
+                      <div class="card-header">TokenInfo</div>
+                      <div class="card-body">TotalSupply<p class="totalSupply"></p></div>
+                      <div class="card-body">TotalStaked<p class="totalStaked"></p></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3"><div class="card">
+                      <div class="card-header">Stake</div>
+                      <div class="card-body"><p>available: <span class="availableStake"></span></p></div>
+                      <div class="card-body">
+                        <input type="text" class="form-control f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Amount" id="stakeAmount">
+                      </div>
+                      <button class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" id="stakeButton">Stake</button>
+                    </div></div>
+                  <div class="col-sm-3"><div class="card">
+                      <div class="card-header">UnStake</div>
+                      <div class="card-body"><p>staked: <span class="stakedbalance"></span></p></div>
+                      <div class="card-body">
+                        <input type="text" class="form-control f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Amount" id="unstakeAmount">
+                      </div>
+                      <button class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" id="unstakeButton">UnStake</button>
+                    </div></div>
+                  <div class="col-sm-3"><div class="card">
+                      <div class="card-header">Dividends</div>
+                      <div class="card-body">earnings<p class="dividendsOf"></p></div>
+                      <div class="card-body"><p></p></div>
+                      <button class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2" id="collect">Collect</button>
+                    </div></div>
+                </div>
+                <hr>
+                <h3>Transfer PUPPR Token</h3>
+                <input type="text" class="form-control" placeholder="Enter value" id="amount">
+                <label for="sendto">Transfer to:</label>
+                <input type="text" class="form-control" placeholder="Enter address" id="to">
+                <button class="btn btn-primary" id="sendEthButton">Transfer</button>
+              <hr>
+                              
+              </div>
+            </div><!-- / Main -->
+      
+      <!-- Sidebar -->
       <div class="fl w-100 w-30-l pa4 br b--light-blue">
         <div id="network">
           <p>
@@ -128,100 +177,40 @@
               <h3>BNB</h3>
               <div class="card-body"><p>MainNetBalance: <span class="balance"></span></p></div>
               <button class="f5 link dim br2 ph3 pv2 mb2 dib white fw7 bg-blue ttu ba b--blue " id="buyBNB" style="background-image: url(img/static-blue.gif);">BUY BNB</button>
-            </div>
+          </div>
+
           <div class="card bt bb b--light-blue br2">
               <h3>PUPPR</h3>
               <div class="card-body"><p>Contract: <span class="puppr"></span></p></div>
               <div class="card-body"><p>BSCScan: <span class="pupprscan"></span></p></div>
               <div class="card-footer"><p>Balance: <span class="pupprbalance"></span> PUPPR </p>
               </div>
-            </div>
-            
+            </div>            
          </div>
          
-         
          <div class="card bb b--light-blue">
-         <h3>Add PUPPR to MetaMask</h3>
-         <button class="f5 link dim br2 ph3 pv2 mb2 dib white fw7 bg-blue ttu ba b--blue" id="addToken">Add Puppr</button>
+          <h3>Add PUPPR to MetaMask</h3>
+          <button class="f5 link dim br2 ph3 pv2 mb2 dib white fw7 bg-blue ttu ba b--blue" id="addToken">Add Puppr</button>
         </div>
-
-        <!-- <div class="card ba b--blue br2 pa2">
-         <h3>Transfer PUPPR Token</h3>
-         <input type="text" class="form-control" placeholder="Enter value" id="amount">
-         <label for="sendto">Transfer to:</label>
-         <input type="text" class="form-control" placeholder="Enter address" id="to">
-         <button class="f6 link dim br2 ph3 pv2 mb2 dib white bg-blue ttu bn" id="sendEthButton">Transfer</button>
-        </div> -->
-
-      </div>
+      </div><!-- / Sidebar -->
 
 
 
 
-      <!-- Main -->
-      <div class="fl w-100 w-70-l pa5 bg-lightest-blue">
-        
-        <div class="info"> 
-                    
-          <div class="row text-center">
-            <div class="col-sm-3">
-                <div class="card">
-                <div class="card-header">TokenInfo</div>
-                <div class="card-body">TotalSupply<p class="totalSupply"></p></div>
-                <div class="card-body">TotalStaked<p class="totalStaked"></p></div>
-              </div>
-            </div>
-            <div class="col-sm-3"><div class="card">
-                <div class="card-header">Stake</div>
-                <div class="card-body"><p>available: <span class="availableStake"></span></p></div>
-                <div class="card-body">
-                  <input type="text" class="form-control f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Amount" id="stakeAmount">
-                </div>
-                <button class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" id="stakeButton">Stake</button>
-              </div></div>
-            <div class="col-sm-3"><div class="card">
-                <div class="card-header">UnStake</div>
-                <div class="card-body"><p>staked: <span class="stakedbalance"></span></p></div>
-                <div class="card-body">
-                  <input type="text" class="form-control f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Amount" id="unstakeAmount">
-                </div>
-                <button class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" id="unstakeButton">UnStake</button>
-              </div></div>
-            <div class="col-sm-3"><div class="card">
-                <div class="card-header">Dividends</div>
-                <div class="card-body">earnings<p class="dividendsOf"></p></div>
-                <div class="card-body"><p></p></div>
-                <button class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2" id="collect">Collect</button>
-              </div></div>
-          </div>
-          <hr>
-          <h3>Transfer PUPPR Token</h3>
-          <input type="text" class="form-control" placeholder="Enter value" id="amount">
-          <label for="sendto">Transfer to:</label>
-          <input type="text" class="form-control" placeholder="Enter address" id="to">
-          <button class="btn btn-primary" id="sendEthButton">Transfer</button>
-        <hr>
-                        
-        </div>
-          </div>
-        
-      </div>
-    </main>
+
+  
+    </div><!-- #panels -->
+
+
 
 
     <section class="mw5 mw7-ns center pa3 ph5-ns">
-
-     
-
 
     <!--  hide main div when not connected see index.html connect.js method " style="display: none""-->
   
       <div class="alert alert-danger" id="alert-error-https" style="display: none">
         You can run this shit only over HTTPS connection.
       </div>
-        
-    </div>
-    
 
     <!-- logged logged out state -->
       <div id="welcome" class="text-center">
@@ -230,10 +219,8 @@
       <div id="goodbye">
         <!-- <h1>bye</h1> -->
       </div> 
-          
-</div>
-
-</section>
+    
+    </section>
 
 
     <!-- <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script> -->
