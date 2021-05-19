@@ -1,9 +1,13 @@
 # $puppr 
 
+npm install
+npm start
+
+
 Needs some love.
  
 
-index.html and connect.js are the only files in this dir that are used for the app.
+src/index.html and src/connect.js are the only files in this dir that are used for the app.
 - connection issues with metamask: does not stay connected. a switching of accounts in metamask does cause the app to load.
 - would be nice to have app update upon succenssful stake, and unstake actions
 
