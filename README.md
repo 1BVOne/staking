@@ -1,4 +1,4 @@
-# $puppr 
+# $puppr staking
 
 `npm install`
 `npm start`
