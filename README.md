@@ -1,7 +1,7 @@
 # $puppr 
 
-npm install
-npm start
+`npm install`
+`npm start`
 
 
 Needs some love.
